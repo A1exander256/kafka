@@ -14,7 +14,8 @@ type KafkaProducer struct {
 
 func NewKafkaProducer() *KafkaProducer {
 	writer := kafka.NewWriter(kafka.WriterConfig{
-		Brokers: []string{"localhost:9092"},
+		//для докера kafka:29092 для local localhost:9092
+		Brokers: []string{"kafka:29092"},
 		Topic:   "test",
 	})
 

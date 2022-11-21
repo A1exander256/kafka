@@ -14,7 +14,8 @@ type KafkaReader struct {
 
 func NewKafkaReader() *KafkaReader {
 	reader := kafka.NewReader(kafka.ReaderConfig{
-		Brokers: []string{"localhost:9092"},
+		//для докера kafka:29092 для local localhost:9092
+		Brokers: []string{"kafka:29092"},
 		Topic:   "test",
 	})
 	return &KafkaReader{
